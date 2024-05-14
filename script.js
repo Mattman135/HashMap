@@ -1,6 +1,5 @@
 class HashMap {
   constructor() {
-    this.bucketSize = 0 // behöver jag den här?
     this.buckets = []
   }
 
@@ -37,7 +36,31 @@ class HashMap {
   length() {
     return Object.keys(this.buckets).length
   }
+
+  clear() {
+    this.buckets = []
+  }
+
+  keys() {
+    return Object.keys(this.buckets).length
+  }
+
+  values() {
+    return Object.values(this.buckets)
+  }
+
+  entries() {
+    return Object.entries(this.buckets)
+  }
 }
 
-let test = new HashMap()
+const test = new HashMap()
 test.set("carlos", "old value")
+test.set("donald", "trump")
+test.set("joe", "biden")
+test.set("donald", "duck")
+
+console.log(test.length())
+console.log(test.keys())
+console.log(test.values())
+console.log(test.entries())
